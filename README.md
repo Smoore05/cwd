@@ -1,2 +1,2 @@
 # CWD
-A repository for my Critical Web Design class.
+This is Sarah Moore's Github account, setting up a site with Github.
