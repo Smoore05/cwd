@@ -7,9 +7,60 @@
 
 	-->
 	<title>Unbranding</title>
+
+	<style>
+		body {
+			background-color: darkred;
+			font-family: Helvetica, Arial, sans-serif;
+		}
+
+		h1 {
+			text-align:center;
+		}
+
+		#everything {
+			width:400px;
+			height:400px;
+			background-color: purple;
+			/*margin:500px;*/
+
+			margin-bottom: 80px;
+			margin-top: 120px;
+			margin-right: auto;
+			margin-left: auto;
+
+			margin:80px, 120px, auto, auto;
+
+			/*margin:0 auto;*/
+
+			background-image:url(assets/images/wrench.png);
+		}
+
+
+	/*	#everything:hover {
+			/*background-color: blueviolet;*/
+			background-image: url(assets/images/clock.png);
+			cursor: wait;*/
+		}
+
+	</style>	
 	
 </head>
 <body>
-	<h1>Hello, world!</h1>
+	<div id="everything">
+
+	</div>
+
+	<h1>Everything You Need</h1>
+
+	<script type="text/javascript">
+
+		let targetElement = document.querySelector ("#everything");
+
+		targetElement.addEventListener ("mouseover", function(){
+			console.log("Hey this works!");
+		})
+
+	</script>
 </body>
 </html>
