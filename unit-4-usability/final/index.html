@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+	<!--
+	About this page: This was a tricky process. I mainly used the pages from the textbooks to have help with this website. I wish we had gone over this more in class. I was still confused in coding the website, so it took me longer to code the site.
+
+	-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Google Maps Usability Report</title>
+
+<link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Google Fonts: Gaegu (Cute) and Quicksand -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        :root {
+            --map-blue: #a2d2ff;
+            --map-green: #b9fbc0;
+            --map-yellow: #fdf0d5;
+            --map-red: #ff8686;
+            --text-dark: #464646;
+        }
+
+        body {
+            background-color: #fffdf9;
+            color: var(--text-dark);
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Gaegu', cursive;
+            font-size: 3.5rem;
+            color: #5b8fb9;
+            margin-bottom: 0;
+        }
+
+        .subline {
+            font-family: 'Gaegu', cursive;
+            font-size: 1.8rem;
+            color: var(--map-red);
+            margin-bottom: 40px;
+        }
+
+        /* Image & Grid Styling */
+        .feature-card {
+            background: white;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            border: 3px solid var(--map-blue);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.02);
+            border-color: var(--map-red);
+        }
+
+        /* Fluid Image Resizing */
+        .img-fluid-custom {
+            width: 500px;
+            height: 500px;
+            object-fit: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .step-badge {
+            background: var(--map-yellow);
+            color: #d4a373;
+            font-family: 'Gaegu', cursive;
+            font-size: 1.5rem;
+            padding: 0 15px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* SUS Calculator Styling */
+        .sus-outer {
+            background: var(--map-green);
+            border-radius: 40px;
+            padding: 50px 20px;
+            margin-top: 80px;
+        }
+
+        .sus-inner {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .btn-calc {
+            background-color: var(--map-red);
+            color: white;
+            font-family: 'Gaegu', cursive;
+            font-size: 1.8rem;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-calc:hover {
+            background-color: #ff5e5e;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .final-score {
+            font-family: 'Gaegu', cursive;
+            font-size: 4rem;
+            color: #5b8fb9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5 text-center">
+    <header>
+        <h1>Google Maps Usability Report</h1>
+        <p class="subline">View the results of the test subject's and then try it for yourself!</p>
+    </header>
+
+    <!-- 5 Fluid Images in Bootstrap Grid -->
+    <div class="row g-4 justify-content-center">
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="feature-card">
+                <span class="step-badge">1</span>
+                <img src="../assets/1.png.png" class="img-fluid img-fluid-custom" alt="Google Maps. Add a place.">
+                <p class="fw-bold mb-1">Find where you can add a location of your choice</p>
+                <small class="text-muted">Test subject subject #1 found the "Add a place" area fairly quickly. While test subject #2 had asked questions and gave attitude when I didn't help him. Then he found it when I gave him a hint.</small>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="feature-card">
+                <span class="step-badge">2</span>
+                <img id="Add" src="../assets/2.png.png" class="img-fluid img-fluid-custom" alt="Google Maps. Finding the exact distance to the closest museum.">
+                <p class="fw-bold mb-1">Find the closest museum and the exact distance</p>
+                <small class="text-muted">Subject #1 and #2 had found the closest museum and the distance easily. The museum being the Fredericksburg Area Museum, 1.1 miles.</small>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="feature-card">
+                <span class="step-badge">3</span>
+                <img id="Add" src="../assets/3.png.png" class="img-fluid img-fluid-custom" alt="Google Maps. Finding the closest Olive garden.">
+                <p class="fw-bold mb-1">Find the closest Olive Garden and what time it closes</p>
+                <small class="text-muted">Subject #1 had mildly quickly. While subject #2 had struggled with finding the closest Olive Garden. Although, found out what time it closes really quickly.</small>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="feature-card">
+                <span class="step-badge">4</span>
+                <img id="Add" src="../assets/4.png.png" class="img-fluid img-fluid-custom" alt="Google Maps. Add a place.">
+                <p class="fw-bold mb-1">Find how long it would take to walk from Olive Garden to Target</p>
+                <small class="text-muted">Subject #1 and #2 easily found the nearest to the Olive Garden, which was a mile to walk from the Olive Garden to the Target.</small>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="feature-card">
+                <span class="step-badge">5</span>
+                <img id="Add" src="../assets/5.png.png" class="img-fluid img-fluid-custom" alt="Google Maps. Add a place.">
+                <p class="fw-bold mb-1">Try to correct a name of a place on Google Maps</p>
+                <small class="text-muted"> Subject #1 and #2 had found the button to "Suggest an edit" quickly. Subject #1's ending time was 6:28 since there was some issues at the beginning. While subject #2's ending time was 4:44. </small>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUS Calculator Area -->
+    <div class="sus-outer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="sus-inner">
+                        <h2 class="font-gaegu" style="font-size: 2.5rem;">The System Usability Scale Test</h2>
+                        <p class="text-muted mb-4">Rate your experience using Google Maps (1 = Disagree, 5 = Agree)</p>
+                        
+                        <form id="susForm" class="text-start">
+                            <div id="questions-list"></div>
+                            <div class="text-center mt-5">
+                                <button type="button" class="btn btn-calc" onclick="runSUS()">Calculate Score!</button>
+                            </div>
+                        </form>
+
+                        <div id="results" class="mt-5 d-none">
+                            <p class="fw-bold text-uppercase small text-muted mb-0">Your Usability Score</p>
+                            <div class="final-score" id="totalScore">0</div>
+                            <p id="verdict" class="fs-5"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        "I think that I would like to use this system frequently.",
+        "I found the system unnecessarily complex.",
+        "I thought the system was easy to use.",
+        "I think that I would need the support of a technical person to be able to use this system.",
+        "I found the various functions in this system were well integrated.",
+        "I thought there was too much inconsistency in this system.",
+        "I would imagine that most people would learn to use this system very quickly.",
+        "I found the system very cumbersome to use.",
+        "I felt very confident using the system.",
+        "I needed to learn a lot of things before I could get going with this system."
+    ];
+
+    const list = document.getElementById('questions-list');
+    questions.forEach((q, i) => {
+        list.innerHTML += `
+            <div class="mb-4 pb-3 border-bottom" style="border-color: #f0f0f0 !important;">
+                <p class="mb-2"><strong>${i+1}. ${q}</strong></p>                                  
+                    <div class="btn-group">
+                        ${[1, 2, 3, 4, 5].map(n => `
+                            <input type="radio" class="btn-check" name="q${i}" id="q${i}_${n}" value="${n}" ${n===3?'checked':''}>
+                            <label class="btn btn-outline-info btn-sm px-3" style="border-radius: 50% !important; margin: 0 4px; border-color: #a2d2ff; color: #5b8fb9;" for="q${i}_${n}">${n}</label>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    function runSUS() {
+        let raw = 0;
+        for(let i=0; i<10; i++) {
+            let v = parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
+            // Odd: (Score - 1) | Even: (5 - Score)
+            raw += (i % 2 === 0) ? (v - 1) : (5 - v);
+        }
+        const final = raw * 2.5;
+        document.getElementById('totalScore').innerText = final;
+        
+        let msg = final >= 68 ? "Yay! Google Maps is super user-friendly!" : "Aww, it seems a bit tricky to use.";
+        document.getElementById('verdict').innerText = msg;
+        
+        const res = document.getElementById('results');
+        res.classList.remove('d-none');
+        res.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
